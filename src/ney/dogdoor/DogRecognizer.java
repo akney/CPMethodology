@@ -17,6 +17,7 @@ public class DogRecognizer {
 		this.dogDoor = dogDoor;
 		pawRecognizer = new PawRecognizer(dogDoor);
 		barkRecognizer = new BarkRecognizer(dogDoor);
+		allowedDogs = new HashSet<Dog>();
 	}
 
 	public void recognizeWithBark(Bark bark) {
@@ -30,6 +31,9 @@ public class DogRecognizer {
 	public void recognizeEnteringDog(Object o) {
 		if (!(o instanceof Dog) || !allowedDogs.contains(o)) {
 			dogDoor.close();
+			System.out.println("Can't come in.");
+		} else {
+			System.out.println("Dog going through.");
 		}
 	}
 

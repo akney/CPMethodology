@@ -18,11 +18,7 @@ public class DogDoorRemote {
 	 */
 	public void openButton() {
 		System.out.println("Pressing open button.");
-		if (dogDoor.isAutomaticClosing()) {
-			dogDoor.openWithTimer();
-		} else {
-			dogDoor.open();
-		}
+		dogDoor.open();
 	}
 
 	/**
@@ -37,6 +33,7 @@ public class DogDoorRemote {
 	 * Changes automatic close options from the remote
 	 */
 	public void automaticCloseButton() {
+		System.out.println("Pressing Automatic Close Button");
 		if (dogDoor.isAutomaticClosing()) {
 			dogDoor.setAutomaticClosing(false);
 		} else {
