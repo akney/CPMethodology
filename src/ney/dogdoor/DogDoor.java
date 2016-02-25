@@ -5,13 +5,19 @@ import java.util.TimerTask;
 
 public class DogDoor {
 	private boolean open;
+	private boolean automaticClosing;
 
 	public DogDoor() {
 		open = false;
-
+		automaticClosing = false;
 	}
 
 	public void open() {
+		System.out.println("The dog door opened.");
+		open = true;
+	}
+
+	public void openWithTimer() {
 		System.out.println("The dog door opened.");
 		open = true;
 		final Timer timer = new Timer();
@@ -34,8 +40,12 @@ public class DogDoor {
 		return open;
 	}
 
-	public void setOpen(boolean open) {
-		this.open = open;
+	public void setAutomaticClosing(boolean bool) {
+		automaticClosing = bool;
+	}
+
+	public boolean isAutomaticClosing() {
+		return automaticClosing;
 	}
 
 }

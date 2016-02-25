@@ -3,19 +3,45 @@ package ney.dogdoor;
 public class DogDoorRemote {
 	private DogDoor dogDoor;
 
+	/**
+	 * Creates an instance of DogDoor
+	 * 
+	 * @param dogDoor
+	 *            takes in DogDoor that the remote will be connected to
+	 */
 	public DogDoorRemote(DogDoor dogDoor) {
 		this.dogDoor = dogDoor;
 	}
 
-	public void open() {
-		System.out.println("The dog door is open.");
-		dogDoor.setOpen(true);
-
+	/**
+	 * Opens the DogDoor
+	 */
+	public void openButton() {
+		System.out.println("Pressing open button.");
+		if (dogDoor.isAutomaticClosing()) {
+			dogDoor.openWithTimer();
+		} else {
+			dogDoor.open();
+		}
 	}
 
-	public void close() {
-		System.out.println("The dog door is closed.");
-		dogDoor.setOpen(false);
+	/**
+	 * Closes the DogDoor
+	 */
+	public void closeButton() {
+		System.out.println("Pressing closed button.");
+		dogDoor.close();
+	}
+
+	/**
+	 * Changes automatic close options from the remote
+	 */
+	public void automaticCloseButton() {
+		if (dogDoor.isAutomaticClosing()) {
+			dogDoor.setAutomaticClosing(false);
+		} else {
+			dogDoor.setAutomaticClosing(true);
+		}
 	}
 
 }
