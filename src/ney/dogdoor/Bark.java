@@ -7,4 +7,8 @@ public class Bark {
 		this.sound = sound;
 	}
 
+	public String getSound() {
+		return sound;
+	}
+
 }
