@@ -1,11 +1,8 @@
 package ney.dogdoor;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 public class Driver {
 	public static void main(String[] args) {
-		final Timer timer = new Timer();
+
 		DogDoor dogDoor = new DogDoor();
 		Dog fifi = new Dog(new Paw(1), new Bark("Woof"));
 		Dog louis = new Dog(new Paw(3), new Bark("Arf"));
@@ -20,23 +17,36 @@ public class Driver {
 		System.out.println("Using the remote.");
 		remote.openButton();
 
-		timer.schedule(new TimerTask() {
-			@Override
-			public void run() {
-				System.out.println("5 seconds have passed");
-				timer.cancel();
-			}
-		}, 5000);
-
-		System.out.println("Rover entering the dog door.");
+		System.out.println("\nRover entering the dog door.");
 		recognizer.recognizeEnteringDog(rover);
 
-		System.out.println("Using the remote.");
+		System.out.println("\nUsing the remote.");
 		remote.closeButton();
 
-		System.out.println("Using the remote.");
+		System.out.println("\nUsing the remote.");
 		remote.automaticCloseButton();
 
+		System.out.println("\nFifi barks at the door.");
+		recognizer.recognizeWithBark(fifi.getBark());
+
+		System.out.println("\nFifi entering the door.");
+		recognizer.recognizeEnteringDog(fifi);
+
+		System.out.println("\nLouis tries entering too.");
+		recognizer.recognizeEnteringDog(louis);
+
+		System.out.println("\nLouis barks at the door.");
+		recognizer.recognizeWithBark(louis.getBark());
+
+		System.out.println("\nRover scratches the door.");
+		recognizer.recognizeWithPaw(rover.getPaw());
+
+		System.out.println("\nRover goes through the door.");
+		recognizer.recognizeEnteringDog(rover);
+
+		Cat cat = new Cat();
+		System.out.println("\nA cat tries to enter.");
+		recognizer.recognizeEnteringDog(cat);
 	}
 
 }

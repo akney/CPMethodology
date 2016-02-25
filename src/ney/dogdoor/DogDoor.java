@@ -24,10 +24,12 @@ public class DogDoor {
 			timer.schedule(new TimerTask() {
 				@Override
 				public void run() {
+					System.out.println("5 seconds have passed.");
 					close();
 					timer.cancel();
 				}
 			}, 5000);
+
 		}
 	}
 

@@ -36,8 +36,10 @@ public class DogDoorRemote {
 		System.out.println("Pressing Automatic Close Button");
 		if (dogDoor.isAutomaticClosing()) {
 			dogDoor.setAutomaticClosing(false);
+			System.out.println("\tWon't automatically close.");
 		} else {
 			dogDoor.setAutomaticClosing(true);
+			System.out.println("\tWill automtically close.");
 		}
 	}
 

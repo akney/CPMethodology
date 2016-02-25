@@ -24,11 +24,11 @@ public class BarkRecognizer {
 	 *            takes in the allowed bark
 	 */
 	public void recognize(Bark bark) {
-		System.out.println("   	BarkRecognizer: Heard a '" + bark + "'");
+		System.out.println("BarkRecognizer: Heard a '" + bark.getSound() + "'");
 		if (allowedBarks.contains(bark)) {
 			door.open();
 		} else {
-			System.out.println("	Dog not allowed entry.");
+			System.out.println("Dog not allowed entry.");
 		}
 
 	}
