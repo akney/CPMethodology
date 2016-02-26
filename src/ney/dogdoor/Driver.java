@@ -47,6 +47,21 @@ public class Driver {
 		Cat cat = new Cat();
 		System.out.println("\nA cat tries to enter.");
 		recognizer.recognizeEnteringDog(cat);
+
+		System.out.println("\n\nNow testing code box.");
+		DogDoor dogDoor2 = new DogDoor();
+
+		CodeBox codeBox = new CodeBox(3442, dogDoor);
+		System.out.println("New code box with dogDoor in it.");
+		System.out.println("Adding dogDoor2 to the code box.");
+		codeBox.addDogDoor(dogDoor2);
+		System.out.println("Closing all dog doors, entering right code.");
+		codeBox.closeAll(3442);
+		System.out.println("Opening all dog doors, with wrong code.");
+		codeBox.openAll(4442);
+		System.out.println("Opening all dog doors with right code.");
+		codeBox.openAll(3442);
+
 	}
 
 }

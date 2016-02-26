@@ -13,10 +13,12 @@ public class CodeBox {
 
 	public void openAll(int attemptedCode) {
 		if (attemptedCode == code) {
-			System.out.println("Closing all doors.");
+			System.out.println("Opening all doors.");
 			for (int i = 0; i < counter; i++) {
 				dogDoors[i].open();
 			}
+		} else {
+			System.out.println("invalid code");
 		}
 	}
 
@@ -26,6 +28,20 @@ public class CodeBox {
 			for (int i = 0; i < counter; i++) {
 				dogDoors[i].close();
 			}
+		}
+	}
+
+	public void addDogDoor(DogDoor dogDoor) {
+		if (counter < 5) {
+			dogDoors[counter++] = dogDoor;
+		} else {
+			System.out.println("Max capacity filled cannot add this dog door.");
+		}
+	}
+
+	public void removeDogDoor(DogDoor dogDoor) {
+		if (counter > 0) {
+			counter--;
 		}
 	}
 }
