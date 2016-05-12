@@ -17,7 +17,7 @@ public class CallHandler {
 		callsQueue = new ArrayList<LinkedList<Call>>();
 	}
 
-	public Employee getCallHandler(Call call) {
+	private Employee getCallHandler(Call call) {
 		for (int level = call.getRank(); level < levels - 1; level++) {
 			Employee[] employeeLevel = empLevels.get(level);
 			for (Employee emp : employeeLevel) {
@@ -34,6 +34,7 @@ public class CallHandler {
 		Employee emp = getCallHandler(call);
 		if (emp != null) {
 			emp.receiveCall(call);
+
 		} else {
 			// place the call into corresponding call queue according to
 			// its rank
