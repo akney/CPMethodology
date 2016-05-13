@@ -77,6 +77,25 @@ public class TestConnectFourBoard {
 	}
 
 	@Test
+	public void testWinnerDiagnol() {
+		ConnectFourBoard board = new ConnectFourBoard();
+		board.turn(0);
+		board.turn(0);
+		board.turn(0);
+		board.turn(0);
+		board.turn(2);
+		board.turn(2);
+		board.turn(2);
+		board.turn(3);
+		board.turn(3);
+		board.turn(1);
+		board.turn(1);
+		int row = board.turn(1);
+
+		Assert.assertTrue(board.winner(row, 1));
+	}
+
+	@Test
 
 	public void testNoWinner() {
 		ConnectFourBoard board = new ConnectFourBoard();
