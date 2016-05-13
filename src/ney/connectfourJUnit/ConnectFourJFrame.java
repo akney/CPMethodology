@@ -1,4 +1,4 @@
-package ney.connectfour;
+package ney.connectfourJUnit;
 
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -53,9 +53,9 @@ public class ConnectFourJFrame extends JFrame {
 						}
 					}
 
-					int row = board.turn(col, player); // does a turn in the
-														// ConnectFourBoard
-														// and returns the row
+					int row = board.turn(col); // does a turn in the
+												// ConnectFourBoard
+												// and returns the row
 
 					if (row != -1) {
 						boolean restarted = false;
@@ -67,8 +67,8 @@ public class ConnectFourJFrame extends JFrame {
 																	// component
 																	// that
 																	// color
-						if (board.winner(player, row, col)) { // checking for a
-																// winner
+						if (board.winner(row, col)) { // checking for a
+														// winner
 							if (player == 'r') {
 								statistics.put("Red", statistics.get("Red") + 1);
 								JOptionPane.showMessageDialog(null, "Red Wins!");

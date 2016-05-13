@@ -1,4 +1,4 @@
-package ney.connectfour;
+package ney.connectfourJUnit;
 
 import java.awt.Color;
 import java.awt.Graphics;

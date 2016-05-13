@@ -1,4 +1,4 @@
-package ney.connectfour;
+package ney.connectfourJUnit;
 
 public class ConnectFourMain {
 
